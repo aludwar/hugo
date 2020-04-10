@@ -1,7 +1,8 @@
-baseURL = "https://calgaryrhce.ca"
+baseURL = "https://aludwar.github.io"
 languageCode = "en-us"
 title = "Calgary RHCE"
 theme = "soho"
+publishDir = "aludwar.github.io"
 
 enableInlineShortcodes = true
 
