@@ -19,7 +19,7 @@ I’m a linux and open source enthusiast located in Calgary, Alberta, Canada. O
 
 Throughout my nearly 20 years in IT, it&#8217;s been my responsibility to sort through these solutions and implementations and bring that knowledge to the business. In doing so, I see a lot of untapped business value that is typically obstructed by close-minded thinking, not knowing what is out there and available to you, or being weary of change. As such, I&#8217;ve made it a goal to broaden my own knowledge of open source technologies at the enterprise level, and share my experiences.
 
-Both modern business and the open source ecosystem has never moved as quickly as it does today. The rate of change and the rate of innovation continue to acclerate. As a result, we need to adapt, learn, and drive business value quicker than before. Never has collaboration been more vitally important than it is today. Let’s work on these challenges together, and contribute our efforts back to our communities.
+Both modern business and the open source ecosystem has never moved as quickly as it does today. The rate of change and the rate of innovation continue to accelerate. As a result, we need to adapt, learn, and drive business value quicker than before. Never has collaboration been more vitally important than it is today. Let’s work on these challenges together, and contribute our efforts back to our communities.
 
 These blog posts are my own.
 
