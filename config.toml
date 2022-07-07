@@ -56,3 +56,7 @@ themeColor = "#990000"
   noClasses = true # if false, you need to provide you own custom CSS
   style = "monokai"
   tabWidth = 4
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
