@@ -66,8 +66,8 @@ I&#8217;ve named this credential for the Red Hat Customer Portal, and I&#8217;ve
   label: rhnpassword
   secret: true
 required:
-- rhn-username
-- rhn-password</pre>
+  rhn-username
+  rhn-password</pre>
 
 The injector configuration is basically taking over for the environmental variable structure, in that we&#8217;ll be using these as extra vars passed into playbooks, and I&#8217;m assigning these a name and a value to be referenced
 
