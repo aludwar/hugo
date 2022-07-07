@@ -1,5 +1,5 @@
 ---
-title: Fully Autonomous Containerized Deployment
+title: Fully Autonomous Containerized Deployment, part 1
 author: Andrew Ludwar
 type: post
 date: 2022-07-07T11:36:33-06:00
@@ -39,12 +39,17 @@ Fedora CoreOS has matured quite a bit over the past 2-3 years since the move fro
 
 After [downloading the Fedora CoreOS qcow2 image][4], I've built a YAML formatted Butane file and shell script to deploy locally to libvirt. After we get the foundational concepts understood here, I'll later adapt this deployment for cloud in AWS.
 
-The Butane file is YAML, so we'll declare all of our configuration pieces in this file. We'll convert it to an Ignition file, which is JSON formatted, for passing to libvirt at VM creation time. The [Fedora documentation][5] for Butane and Ignition is pretty good. For additional details on configuration examples, head over there. I've done some basic things for my file:
+The Butane file is YAML, so we'll declare all of our configuration pieces in this file. Before we create the VM we'll need to convert it to an Ignition file, which is JSON formatted, for passing to libvirt at VM creation time. The [Fedora documentation][5] for Butane and Ignition is pretty good. For additional details on configuration examples, head over there. I've done some basic things for my file:
 
 * Specified the root filesystem disk size of 10 GB (Needs to be at least 8 GB)
 * Set the hostname, static IP networking with DNS details
 * Configured two files that [setup automatic updating][6] of the OS
 
+The Zincati service is the one responsible for automatically updating the OS, via rpmtree. This is the key to having Fedora CoreOS set to automatically update itself once a new version is available, whether that be a new minor build or major release.
+
+You can set a rollout wariness paramater, which specifies how eager the system is to receive new updates. This number goes from 1.0 (very cautious) to 0.0 (very eager). As mentioned in the [docs][7], the common idea here is to have a few nodes, aka "canaries", configured to be very eager to receive updates. These nodes are meant to receive updates as soon as they're available, can afford some downtime, and are specifically monitored to detect issues before the rollouts start affecting a larger fleet of machines.
+
+The other concept at play here is the updates strategy for rebooting machines. Once a new update has been staged, the machine needs to be rebooted in order to apply the update. There are a few [stratgies][8] for when to take this reboot. The one I've chosen below is a periodic strategy which allows you to set a maintenance window, and have reboots occur at this time.
 
 <pre class="">
 variant: fcos
@@ -105,7 +110,7 @@ passwd:
 </pre>
 
 
-From there, we convert the Butane file into an Ignition file (you may need to install the Butane utility on your machine, or just pull the container for it):
+This is all that's required to provide basic configuration for an OS, and enable it to auto-update itself at a scheduled time with some predictability useful for release management. From there, we convert the Butane file into an Ignition file (you may need to install the Butane utility on your machine, or just pull the container for it):
 
 <pre class="">$ butane --pretty --strict fedora.coreos.bu > fedora.coreos.ign</pre>
 
@@ -128,9 +133,14 @@ virt-install --connect="qemu:///system" --name="${VM_NAME}" --vcpus="${VCPUS}" -
 </pre>
 
 
+At this point you should have a working VM created that's set to auto update itself. Next, we'll look at setting up intelligent health checks and automated rollbacks for failed updates.
+
+
 [1]: https://www.redhat.com/rhdc/managed-files/li-why-the-os-matters-ebook-f29731wg-202108-en.pdf
 [2]: https://www.redhat.com/en/blog/architecting-containers-part-1-why-understanding-user-space-vs-kernel-space-matters
 [3]: https://calgaryrhce.ca/blog/2020/02/24/moving-from-fedora-atomic-to-fedora-coreos/
 [4]: https://getfedora.org/en/coreos/download?tab=metal_virtualized&stream=stable&arch=x86_64
 [5]: https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/
 [6]: https://docs.fedoraproject.org/en-US/fedora-coreos/auto-updates/
+[7]: https://coreos.github.io/zincati/usage/auto-updates/#phased-rollouts-client-wariness-canaries
+[8]: https://coreos.github.io/zincati/usage/auto-updates/#strategies-for-updates-finalization
