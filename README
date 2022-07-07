@@ -1,0 +1,11 @@
+Process to clone locally and make updates:
+
+cd /localdir/
+git clone git@github.com:aludwar/hugo.git
+cd /localdir/hugo
+git clone git@github.com:aludwar/aludwar.github.io.git
+git submodule
+git submodule init
+git submodule update
+
+hugo server -D
