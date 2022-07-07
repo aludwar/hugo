@@ -67,7 +67,7 @@ storage:
     - path: /etc/hostname
       mode: 0644
       contents:
-        inline: coreos.ludwar.ca
+        inline: coreos.calgaryrhce.ca
     - path: /etc/NetworkManager/system-connections/enp1s0.nmconnection
       mode: 0600
       overwrite: true
@@ -82,7 +82,7 @@ storage:
           addresses=192.168.100.50/24
           gateway=192.168.100.1
           dns=192.168.100.1
-          dns-search=ludwar.ca
+          dns-search=calgaryrhce.ca
     - path: /etc/zincati/config.d/51-rollout-wariness.toml
       contents: 
         inline: |
@@ -119,7 +119,7 @@ And lastly, a virt-install script that will pass the Ignition configuration, Fed
 <pre class="">$ cat create_coreos_vm.sh
 IGNITION_CONFIG="/home/aludwar/fedora.coreos.ign"
 IMAGE="/home/aludwar/fedora-coreos-36.20220618.3.1-qemu.x86_64.qcow2"
-VM_NAME="coreos.ludwar.ca"
+VM_NAME="coreos.calgaryrhce.ca"
 VCPUS="2"
 RAM_MB="2048"
 STREAM="stable"
