@@ -2,7 +2,7 @@
 title: Fully Autonomous Containerized Deployment, part 2
 author: Andrew Ludwar
 type: post
-date: 2022-07-14T15:36:31-06:00
+date: 2022-07-14T05:36:31-06:00
 categories:
   - cloud
   - containers
