@@ -16,7 +16,7 @@ $ git submodule update
 
 
 Create new post:
-$ hugo new conent/posts/<date>-<title>.md
+$ hugo new content/posts/<date>-<title>.md
 
 View new post:
 $ hugo server -D
