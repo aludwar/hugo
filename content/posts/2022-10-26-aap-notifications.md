@@ -46,11 +46,11 @@ Ref: [Ansible Notifications Supported Parameters][5]
 In the success message body below, I configure job metadata that summarizes all hosts and their results, then one that just shows job status counts, ie what changed/failed and folks can click on the job ID link to Tower GUI to dig deeper. I'm using my ISP SMTP relay here:
 
 
-[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1024" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1024w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 300w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1024px) 100vw, 1024px" />][6]
+[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1526" height="800" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1526w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 300w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1526px) 100vw, 1526px" />][6]
 
 And here's what it looks like once it shows up:
 
-[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1024" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1024w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 300w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1024px) 100vw, 1024px" />][7]
+[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1526" height="800" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1526w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 300w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1526px) 100vw, 1526px" />][7]
 
 
 If you prefer different information here, using the community.general.mail module in a task can get you there.
