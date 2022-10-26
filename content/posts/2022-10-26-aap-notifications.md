@@ -32,7 +32,7 @@ Customers typically tend to default to "only show me actionable stuff" in any An
 
 Here's a [playbook example][2] that I mocked up and used below. The job output:
 
-[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png" alt="" width="1024" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png 1024w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png 300w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png 1361w" sizes="(max-width: 1024px) 100vw, 1024px" />][3]
+![Note 1](https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png)
 
 (You can see that this could get pretty verbose if we wanted to report across multiple hosts)
 
@@ -46,11 +46,13 @@ Ref: [Ansible Notifications Supported Parameters][5]
 In the success message body below, I configure job metadata that summarizes all hosts and their results, then one that just shows job status counts, ie what changed/failed and folks can click on the job ID link to Tower GUI to dig deeper. I'm using my ISP SMTP relay here:
 
 
-[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1526" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1526w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 570w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1526px) 100vw, 1526px" />][6]
+<!-- [<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1526" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1526w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 570w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1526px) 100vw, 1526px" />][6] -->
+
+![Note 2](https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png)
 
 And here's what it looks like once it shows up:
 
-[<img class="size-large wp-image-822" src="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png" alt="" width="1526" height="570" srcset="https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1526w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 570w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 768w, https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png 1361w" sizes="(max-width: 1526px) 100vw, 1526px" />][7]
+![Note 3](https://calgaryrhce.ca/wp-content/uploads/2022/10/note3.png)
 
 
 If you prefer different information here, using the community.general.mail module in a task can get you there.
@@ -64,8 +66,5 @@ For as granular as an email/report as we're after here though, it might be quick
 
 [1]: https://access.redhat.com/documentation/en-us/red_hat_satellite/6.11/html-single/managing_hosts/index#Generating_Host_Monitoring_Reports_managing-hosts
 [2]: https://github.com/aludwar/ansible/blob/master/dnf-report.yml
-[3]: https://calgaryrhce.ca/wp-content/uploads/2022/10/note1.png
 [4]: https://docs.ansible.com/automation-controller/latest/html/userguide/notifications.html
 [5]: https://docs.ansible.com/automation-controller/latest/html/userguide/notification_parameters_supported.html#ir-notifications-reference
-[6]: https://calgaryrhce.ca/wp-content/uploads/2022/10/note2.png
-[7]: https://calgaryrhce.ca/wp-content/uploads/2022/10/note3.png
