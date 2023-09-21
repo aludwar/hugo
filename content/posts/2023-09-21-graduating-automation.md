@@ -36,11 +36,11 @@ Red Hat has an internal automation community of practice. We publish our "good p
 
 In case you haven't guessed or noticed the theme here, the answer is it's going to be an iterative approach. There's two common techniques that can help you get started:
 
-**1. Inventory Exporting/Reporting w/ [Red Hat Community of Practice controller_configuration Ansible collection][2]**
+1. **Inventory Exporting/Reporting w/ [Red Hat Community of Practice controller_configuration Ansible collection][2]**
 
     This export tool can help you export your current AAP inventory into a text format like JSON where you can begin to parse it with whatever method you prefer to reconcile similar hosts, groups, types, functions, etc. and start to make some decisions around intelligent grouping of hosts. If you're familiar with data normalization, this is exactly the same process. Common grouping parameters are geographical location, technical function, business function, operating system derivatives (linux or windows, major version, etc.).
 
-**2. Inventory Host Variable Reporting**
+2. **Inventory Host Variable Reporting**
 
     There's a variety of methods available to do this, I've written an [example playbook][3] that illustrates how this can be done. Using a report like this can help you group together common configuration artifacts like NTP server, DNS information, device services or purpose, etc. Using this information combined with the above helps you decide what commonality may exist across hosts. This can help you better define what should be handled in a host_var, group_var, role or default var, etc. Putting this in a text format helps you build a directory folder scaffolding structure for these common configuration artifacts and logic. A resource that can help in this area is the Ansible Variable Precedence order. Using this as a reference, you can decide where host variable classification should be, what might make sense as a sane default with other variable options that have an option to supersede it. For example:
 
