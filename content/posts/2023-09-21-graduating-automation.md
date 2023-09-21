@@ -1,5 +1,6 @@
 ---
 title: "Graduating with Automation Practices"
+Author: Andrew Ludwar
 date: 2023-09-21T09:20:21-06:00
 type: post
 categories:
@@ -9,7 +10,6 @@ tags:
   - automation
   - ansible
   - open source
-draft: true
 ---
 Lately I've been engaged in a lot of automation discussions. Particularly around governance, standards, scale, workflows, best practices, and the list goes on. My impression is that folks are looking at establishing some of the common foundations to an automation practice and are getting farther down their DevOps & Automation journeys. Often we don't get deep into sorting through these details until some operational concern or pain is felt with the current approach - and that's fine. These are called journeys for a reason and the most important piece is to remember that they're iterative and subject to constant refinement.
 
