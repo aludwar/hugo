@@ -51,7 +51,7 @@ In case you haven't guessed or noticed the theme here, the answer is it's going 
 * A particular group of server infrastructure for a specific application might be better placed in a playbook group_vars or host_vars location and that more customized inheritance structure could be applied to other applications or groups.
 
 
-I hope this added some insight into structuring inventory reconcilation and assit with being iterative in your automation practice.
+I hope this added some insight into structuring inventory reconcilation and assist with being iterative in your automation practice.
 
 
 
