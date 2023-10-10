@@ -31,15 +31,15 @@ The specific section of the doc you should be referencing is [this][4]. While th
 
 First, I've got a user created in AAP Controller named "aludwar". This is in the Access --> Users section of the Controller GUI:
 
-![Ansible Controller Users][https://calgaryrhce.ca/wp-content/uploads/2023/10/aap-users.png]
+![Ansible Controller Users](https://calgaryrhce.ca/wp-content/uploads/2023/10/aap-users.png)
 
 In order to [create a token for a user][5], you need to be logged into AAP as that user. This is where the "Token" tab will show up allowing you to create a new token assigned to this user:
 
-![aludwar Token][https://calgaryrhce.ca/wp-content/uploads/2023/10/aludwar-token.png]
+![aludwar Token](https://calgaryrhce.ca/wp-content/uploads/2023/10/aludwar-token.png)
 
 When creating the token, you'll be prompted with the token value. Similar to a password, you'll need to save this somewhere safe like a password vault or encrypted Ansible vault file. This is what will take place of the username & password authentication when we later send a query to the Controller API.
 
-![User Token Value][https://calgaryrhce.ca/wp-content/uploads/2023/10/user-token.png]
+![User Token Value](https://calgaryrhce.ca/wp-content/uploads/2023/10/user-token.png)
 
 Now that we have a personal access token created for the user "aludwar", we'll write a playbook using the ansible.builtin.uri module that uses the token to query the Controller API and capture the response. Also, since we're handling secrets data, you should consider using the `no_log: true` attribute on the tasks or play that query the API. This can be used to keep verbose output but hide sensitive information from others, and keep the credential(s) from being leaked. Here's two examples below. Note, I'm doing something incredibly insecure here in hardcoding an example token value. As mentioned previously, the right way to store this would be in an encrypted vault file or a password/secrets manager, but for the sake of simplicity I'm showing a very rudimentary and insecure way of writing the playbook:
 
