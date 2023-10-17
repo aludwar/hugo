@@ -10,7 +10,7 @@ xyz_smap:
 
 ---
 <h3 style="text-align: center;">
-  Andrew Ludwar &#8211; Senior Solutions Architect at Red Hat
+  Andrew Ludwar &#8211; Associate Principal Solutions Architect at Red Hat
 </h3>
 
 [<img class="wp-image-651 aligncenter" src="https://calgaryrhce.ca/wp-content/uploads/2018/06/profile_cropped.png" alt="profile_cropped" width="303" height="322" srcset="https://calgaryrhce.ca/wp-content/uploads/2018/06/profile_cropped.png 526w, https://calgaryrhce.ca/wp-content/uploads/2018/06/profile_cropped-282x300.png 282w" sizes="(max-width: 303px) 100vw, 303px" />][1]
