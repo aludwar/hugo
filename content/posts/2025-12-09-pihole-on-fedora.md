@@ -8,7 +8,7 @@ categories:
 tags:
   - open source
 ---
-** How to install PiHole on Fedora Server **
+**How to install PiHole on Fedora Server**
 
 1. [Download the latest copy of Fedora Server][1]. If installing on a Raspberry Pi, make sure you select the ARM archtiecture.
 
