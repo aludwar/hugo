@@ -22,7 +22,15 @@ tags:
 
 3. With your OS image written to storage device, attach the storage device to the Raspberry Pi. (ie insert the sdcard, or plugin USB to SATA cable of SSD). Boot the Raspberry Pi. You should now having a working default Fedora Server OS installed on your Raspberry Pi.
 
-4. Connect to your Pi from either SSH or keyboard/mouse and Pi browser. Use the [one-step automated install of PiHole][3] to install PiHole on the OS. The installer will finish after a few minutes and output the password/URL for you to login to PiHole on your device. It's a good idea to apply any OS updates and reboot.
+4. Connect to your Pi from either SSH or keyboard/mouse and Pi browser. Apply any OS configuration you may need. (Hostname, SSH keys, etc.). For a functioning PiHole, you will need to set SELinux to permissive, and allow some firewall ports. If you're using the DHCP/NTP portions of PiHole, account for those below. I just use DNS/HTTP/HTTPS:
+
+    # sed -i 's/^SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
+    # firewall-cmd --permanent --add-service=http --add-service=https --add-service=dns 
+    # firewall-cmd --reload
+    # reboot
+
+After a reboot, Use the [one-step automated install of PiHole][3] to install PiHole on the OS. The installer will finish after a few minutes and output the password/URL for you to login to PiHole on your device. It's also a good idea to apply any OS updates and reboot.
+
 
 5. Login to PiHole and make any necessary configurations. Personally, I like to add a second blocklist, [Hagezi Multi Pro][4], as well as deny some domains I feel are problematic. (TikTok, Roblox, etc.)
 
