@@ -24,10 +24,12 @@ tags:
 
 4. Connect to your Pi from either SSH or keyboard/mouse and Pi browser. Apply any OS configuration you may need. (Hostname, SSH keys, etc.). For a functioning PiHole, you will need to set SELinux to permissive, and allow some firewall ports. If you're using the DHCP/NTP portions of PiHole, account for those below. I just use DNS/HTTP/HTTPS:
 
+```
     # sed -i 's/^SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
     # firewall-cmd --permanent --add-service=http --add-service=https --add-service=dns 
     # firewall-cmd --reload
     # reboot
+```
 
 After a reboot, Use the [one-step automated install of PiHole][3] to install PiHole on the OS. The installer will finish after a few minutes and output the password/URL for you to login to PiHole on your device. It's also a good idea to apply any OS updates and reboot.
 
